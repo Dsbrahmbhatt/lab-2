@@ -37,4 +37,24 @@ double pizzaCost = pizzas*pizzaPrice;
 
 System.Console.WriteLine("Total Slices: " + totalslices);
 System.Console.WriteLine("Slices Per Person " + slicesPerPerson.ToString("F1") );
-System.Console.WriteLine("Pizza cost " + pizzaCost.ToString("F2"));
+System.Console.WriteLine("Pizza cost " + pizzaCost.ToString("c"));
+
+//part 3
+Console.Write("Hours worked this week ");
+double work = Convert.ToDouble(Console.ReadLine());
+Console.Write("Hourly rate ");
+double rate = Convert.ToDouble(Console.ReadLine());
+
+const double Tax_Rate =.18;
+
+
+double grosspay = work *rate;
+double TaxWithHeld = grosspay*Tax_Rate;
+double takeHomePay = grosspay-TaxWithHeld;
+
+System.Console.WriteLine("grosspay: " + grosspay.ToString("c"));
+System.Console.WriteLine("TaxWithHeld " + TaxWithHeld.ToString("c") );
+System.Console.WriteLine("takeHomePay " + takeHomePay.ToString("c"));
+
+//part4 
+
