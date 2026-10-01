@@ -1,21 +1,20 @@
 ﻿using System.Reflection.Metadata;
+Console.Write("How many miles for your trip? ");
+double tripmiles = Convert.ToDouble(Console.ReadLine());
 
-//Console.Write("How many miles for your trip? ");
-//double tripmiles = Convert.ToDouble(Console.ReadLine());
+Console.Write("How many miles per gallon can you car go");
+double milePerGallon = Convert.ToDouble(Console.ReadLine());
 
-//Console.Write("How many miles per gallon can you car go");
-//double milePerGallon = Convert.ToDouble(Console.ReadLine());
-
-//Console.Write("how much did you pay for gas");
-//double pricePeraGallon = Convert.ToDouble(Console.ReadLine());
+Console.Write("how much did you pay for gas");
+double pricePeraGallon = Convert.ToDouble(Console.ReadLine());
 
 //CALCILATION FOR PART 1 
-//double gallonsNeeded = tripmiles / milePerGallon;
-//double fuelCost = gallonsNeeded * pricePeraGallon;
+double gallonsNeeded = tripmiles / milePerGallon;
+double fuelCost = gallonsNeeded * pricePeraGallon;
 
 //Print the calculations 
-//system.Console.WriteLine("gallon needed: " + gallonsNeeded.ToString("F2"));
-//system.Console.WriteLine("Fuel cost:" + fuelCost.ToString("C"));
+System.Console.WriteLine("gallon needed: " + gallonsNeeded.ToString("F2"));
+System.Console.WriteLine("Fuel cost:" + fuelCost.ToString("C"));
 
 
 //part 2 
@@ -37,4 +36,33 @@ double pizzaCost = pizzas*pizzaPrice;
 
 System.Console.WriteLine("Total Slices: " + totalslices);
 System.Console.WriteLine("Slices Per Person " + slicesPerPerson.ToString("F1") );
-System.Console.WriteLine("Pizza cost " + pizzaCost.ToString("F2"));
+System.Console.WriteLine("Pizza cost " + pizzaCost.ToString("c"));
+
+//part3
+Console.Write("Hours worked this week ");
+double work = Convert.ToDouble(Console.ReadLine());
+Console.Write("Hourly rate");
+double rate = Convert.ToDouble(Console.ReadLine());
+
+const double Tax_Rate =.18;
+
+double grosspay = work*rate;
+double TaxWithHeld = grosspay*Tax_Rate;
+double takeHomePay = grosspay-TaxWithHeld;
+
+System.Console.WriteLine("grosspay: " + grosspay.ToString("c"));
+System.Console.WriteLine("TaxWithHeld: " + TaxWithHeld.ToString("c"));
+System.Console.WriteLine("takeHomePay: " + takeHomePay.ToString("c"));
+
+
+//part 4 
+
+double tripTotal = fuelCost +pizzaCost;
+double costPerPerson= tripTotal / people;
+double takeHomePayPerHour = takeHomePay /work;
+double hoursMustWork = costPerPerson / takeHomePayPerHour;
+
+Console.WriteLine("Trip total: " + tripTotal.ToString("c"));
+Console.WriteLine("cost Per Person: " + costPerPerson.ToString("c"));
+Console.WriteLine("takeHomePayPerHour: " + takeHomePayPerHour.ToString("c"));
+Console.WriteLine("hoursMustWork: " + hoursMustWork.ToString("c"));
