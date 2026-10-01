@@ -1,4 +1,6 @@
 ﻿using System.Reflection.Metadata;
+Console.WriteLine("===Part1:Road Trip ===");
+
 Console.Write("How many miles for your trip? ");
 double tripmiles = Convert.ToDouble(Console.ReadLine());
 
@@ -8,6 +10,8 @@ double milePerGallon = Convert.ToDouble(Console.ReadLine());
 Console.Write("how much did you pay for gas");
 double pricePeraGallon = Convert.ToDouble(Console.ReadLine());
 
+System.Console.WriteLine(" ");
+
 //CALCILATION FOR PART 1 
 double gallonsNeeded = tripmiles / milePerGallon;
 double fuelCost = gallonsNeeded * pricePeraGallon;
@@ -16,8 +20,10 @@ double fuelCost = gallonsNeeded * pricePeraGallon;
 System.Console.WriteLine("gallon needed: " + gallonsNeeded.ToString("F2"));
 System.Console.WriteLine("Fuel cost:" + fuelCost.ToString("C"));
 
+System.Console.WriteLine(" ");
 
 //part 2 
+Console.WriteLine("=== Part 2:Pizza Party ===");
 Console.Write("How many people are going ");
 double people = Convert.ToDouble(Console.ReadLine());
 
@@ -34,11 +40,14 @@ double totalslices = Slices *pizzas;
 double slicesPerPerson = Slices/people;
 double pizzaCost = pizzas*pizzaPrice;
 
+System.Console.WriteLine(" ");
+
 System.Console.WriteLine("Total Slices: " + totalslices);
 System.Console.WriteLine("Slices Per Person " + slicesPerPerson.ToString("F1") );
 System.Console.WriteLine("Pizza cost " + pizzaCost.ToString("c"));
 
 //part3
+Console.WriteLine("=== Part 3:Paycheck ===");
 Console.Write("Hours worked this week ");
 double work = Convert.ToDouble(Console.ReadLine());
 Console.Write("Hourly rate");
@@ -50,13 +59,17 @@ double grosspay = work*rate;
 double TaxWithHeld = grosspay*Tax_Rate;
 double takeHomePay = grosspay-TaxWithHeld;
 
+System.Console.WriteLine(" ");
+
 System.Console.WriteLine("grosspay: " + grosspay.ToString("c"));
 System.Console.WriteLine("TaxWithHeld: " + TaxWithHeld.ToString("c"));
 System.Console.WriteLine("takeHomePay: " + takeHomePay.ToString("c"));
 
 
 //part 4 
+System.Console.WriteLine(" ");
 
+Console.WriteLine("=== Part 4: The Whole Trip ===");
 double tripTotal = fuelCost +pizzaCost;
 double costPerPerson= tripTotal / people;
 double takeHomePayPerHour = takeHomePay /work;
