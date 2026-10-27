@@ -44,7 +44,8 @@ double totalHours = 0;
 double totalTakeHomePay = 0;
 double longest = 0;
 
-for (int i = 0; i < names.Length; i++)
+int i = 0;
+while (i < names.Length)
 {
     double takeHome = TakeHomePay(hoursWorked[i], hourlyRates[i], TAX_RATE);
     double takeHomePerHour = takeHome / hoursWorked[i];
@@ -55,6 +56,7 @@ for (int i = 0; i < names.Length; i++)
     longest = Math.Max(longest, hoursNeeded);
 
     Console.WriteLine($"{names[i]}: takes home ${takeHome:F2} for {hoursWorked[i]} hours, ${takeHomePerHour:F2} per hour, must work {hoursNeeded:F2} hours");
+    i++;
 }
 
 Console.WriteLine($"Total hours worked: {totalHours:F0}");
@@ -74,6 +76,10 @@ static double TakeHomePay(double hours, double hourlyRate, double taxRate)
     return grossPay - taxWithHeld;
 }
 
+static double HoursToCover(double amountOwed, double takeHomePerHour)
+{
+    return amountOwed / takeHomePerHour;
+}
 static double HoursToCover(double amountOwed, double takeHomePerHour)
 {
     return amountOwed / takeHomePerHour;
